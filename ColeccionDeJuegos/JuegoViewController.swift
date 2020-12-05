@@ -29,10 +29,22 @@ class JuegoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let imagenSeleccionada = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        JuegoImageView.image = imagenSeleccionada
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func camaraTapped(_ sender: Any) {
     }
     
     @IBAction func agregarTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let juego = Juego(context: context)
+        juego.titulo = tituloTextField.text
+        juego.imagen = JuegoImageView.image!.pngData() as NSData? as Data?
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
     }
     
     /*
