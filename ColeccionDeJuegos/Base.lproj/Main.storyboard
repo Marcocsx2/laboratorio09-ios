@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="qZf-fZ-ljg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jDw-kx-5EB">
                             <connections>
-                                <segue destination="4uz-Vp-PT9" kind="show" id="pCV-zr-YyU"/>
+                                <segue destination="4uz-Vp-PT9" kind="show" identifier="juegoSegue" id="pCV-zr-YyU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,11 +75,20 @@
                                     <action selector="agregarTapped:" destination="4uz-Vp-PT9" eventType="touchUpInside" id="f8K-dW-vvy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-aI-2E8">
+                                <rect key="frame" x="179.66666666666666" y="333" width="55" height="30"/>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="4uz-Vp-PT9" eventType="touchUpInside" id="RkJ-GB-68x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tts-cS-5MJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k3u-wM-l0t" firstAttribute="centerX" secondItem="Smq-xI-meQ" secondAttribute="centerX" id="3ht-pK-zRo"/>
+                            <constraint firstItem="8uL-aI-2E8" firstAttribute="centerX" secondItem="Smq-xI-meQ" secondAttribute="centerX" id="Fbd-v4-f2f"/>
+                            <constraint firstItem="8uL-aI-2E8" firstAttribute="top" secondItem="kcH-WU-Idd" secondAttribute="bottom" constant="15" id="Oh5-09-edI"/>
                             <constraint firstItem="k3u-wM-l0t" firstAttribute="top" secondItem="tts-cS-5MJ" secondAttribute="top" constant="20" id="SZW-M4-zW4"/>
                             <constraint firstItem="kcH-WU-Idd" firstAttribute="centerX" secondItem="Smq-xI-meQ" secondAttribute="centerX" id="Yck-Bt-6e7"/>
                             <constraint firstItem="ihw-hi-BIJ" firstAttribute="centerX" secondItem="Smq-xI-meQ" secondAttribute="centerX" id="aG5-03-525"/>
@@ -104,6 +113,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="k3u-wM-l0t" id="Hg7-R9-mdA"/>
+                        <outlet property="agregarActualizarBoton" destination="kcH-WU-Idd" id="k42-4Q-G1T"/>
+                        <outlet property="eliminarBoton" destination="8uL-aI-2E8" id="ddu-ZD-NL3"/>
                         <outlet property="tituloTextField" destination="ihw-hi-BIJ" id="geR-kg-nzE"/>
                     </connections>
                 </viewController>
